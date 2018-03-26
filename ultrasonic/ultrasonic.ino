@@ -4,6 +4,8 @@ int triggerPin = 11;
 int echoPin = 12;
 long duration, cm, inches;
 
+const long readIntervalmilliseconds = 250;
+
 void setup() {
   Serial.begin (9600);
 
@@ -20,7 +22,11 @@ void loop() {
   
   outputDistances(cm, inches);
 
-  delay(250);
+  waitForTheReadInterval();
+}
+
+void waitForTheReadInterval(){
+  delay(readIntervalmilliseconds);
 }
 
 void outputDistances(float cm, float inches){
