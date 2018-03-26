@@ -1,26 +1,23 @@
 //borrowed code from https://circuits4you.com/2016/05/13/ultrasonic-sensor-sr04-arduino/
 
-int trigPin = 11;    //Trig - green Jumper
-int echoPin = 12;    //Echo - yellow Jumper
+int triggerPin = 11;
+int echoPin = 12;
 long duration, cm, inches;
 
 void setup() {
-
-  //Serial Port begin
   Serial.begin (9600);
-  //Define inputs and outputs
-  pinMode(trigPin, OUTPUT);
+
+  pinMode(triggerPin, OUTPUT);
   pinMode(echoPin, INPUT);
 
 }
 
 void loop() {
-
-  digitalWrite(trigPin, LOW);
+  digitalWrite(triggerPin, LOW);
   delayMicroseconds(5);
-  digitalWrite(trigPin, HIGH);
+  digitalWrite(triggerPin, HIGH);
   delayMicroseconds(10);
-  digitalWrite(trigPin, LOW);
+  digitalWrite(triggerPin, LOW);
  
   // Read the signal from the sensor: a HIGH pulse whose
   // duration is the time (in microseconds) from the sending
