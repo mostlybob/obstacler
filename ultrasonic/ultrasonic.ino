@@ -16,8 +16,8 @@ void loop() {
   duration = checkPingDuration();
 
   // convert the time into a distance
-  cm = (duration/2) / 29.1;
-  inches = (duration/2) / 74; 
+  cm = getCentimetresFromDuration(duration);
+  inches = getInchesFromDuration(duration); 
   
   Serial.print(inches);
   Serial.print("in, ");
@@ -26,6 +26,14 @@ void loop() {
   Serial.println();
   
   delay(250);
+}
+
+float getInchesFromDuration(long duration){
+  return (duration/2) / 74;
+}
+
+float getCentimetresFromDuration(long duration){
+  return (duration/2) / 29.1;
 }
 
 long checkPingDuration(){
