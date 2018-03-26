@@ -15,17 +15,21 @@ void setup() {
 void loop() {
   duration = checkPingDuration();
 
-  // convert the time into a distance
   cm = getCentimetresFromDuration(duration);
   inches = getInchesFromDuration(duration); 
   
+  outputDistances(cm, inches);
+
+  delay(250);
+}
+
+void outputDistances(float cm, float inches){
+  // it'd be nice to figure out the string formatting functions available
   Serial.print(inches);
   Serial.print("in, ");
   Serial.print(cm);
   Serial.print("cm");
   Serial.println();
-  
-  delay(250);
 }
 
 float getInchesFromDuration(long duration){
