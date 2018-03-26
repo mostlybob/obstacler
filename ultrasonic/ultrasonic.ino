@@ -1,3 +1,5 @@
+//borrowed code from https://circuits4you.com/2016/05/13/ultrasonic-sensor-sr04-arduino/
+
 int trigPin = 11;    //Trig - green Jumper
 int echoPin = 12;    //Echo - yellow Jumper
 long duration, cm, inches;
